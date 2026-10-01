@@ -1,0 +1,67 @@
+Windows Registry Editor Version 5.00
+
+; ============================================
+;  Росич — ассоциация расширений файлов
+;  Двойной клик по .рос / .rus / .функц / .test
+;  запускает интерпретатор автоматически
+; ============================================
+;  ВАЖНО: замени C:\Path\To\ на реальный путь!
+;  Путь к python.exe и rosic.py должен быть абсолютным.
+; ============================================
+
+; --- .рос (главный файл) ---
+[HKEY_CLASSES_ROOT\.рос]
+@="RosicFile"
+[HKEY_CLASSES_ROOT\.рос\PersistentHandler]
+@="{098f2470-bae0-11cd-b579-08002b30feb}"
+
+; --- .rus (модуль) ---
+[HKEY_CLASSES_ROOT\.rus]
+@="RosicModule"
+[HKEY_CLASSES_ROOT\.rus\PersistentHandler]
+@="{098f2470-bae0-11cd-b579-08002b30feb}"
+
+; --- .функц (функция) ---
+[HKEY_CLASSES_ROOT\.функц]
+@="RosicFunc"
+[HKEY_CLASSES_ROOT\.функц\PersistentHandler]
+@="{098f2470-bae0-11cd-b579-08002b30feb}"
+
+; --- .test (тест) ---
+[HKEY_CLASSES_ROOT\.test]
+@="RosicTest"
+[HKEY_CLASSES_ROOT\.test\PersistentHandler]
+@="{098f2470-bae0-11cd-b579-08002b30feb}"
+
+; --- .сфайл (стоп-файл) ---
+[HKEY_CLASSES_ROOT\.сфайл]
+@="RosicStop"
+[HKEY_CLASSES_ROOT\.сфайл\PersistentHandler]
+@="{098f2470-bae0-11cd-b579-08002b30feb}"
+
+; --- Описание типов файлов ---
+[HKEY_CLASSES_ROOT\RosicFile]
+@="Файл Росич"
+"Icon"="C:\\Path\\To\\rosic.ico,0"
+[HKEY_CLASSES_ROOT\RosicFile\shell\open\command]
+@="\"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""
+
+[HKEY_CLASSES_ROOT\RosicModule]
+@="Модуль Росич"
+[HKEY_CLASSES_ROOT\RosicModule\shell\open\command]
+@="\"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""
+
+[HKEY_CLASSES_ROOT\RosicFunc]
+@="Функция Росич"
+[HKEY_CLASSES_ROOT\RosicFunc\shell\open\command]
+@="\"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""
+
+[HKEY_CLASSES_ROOT\RosicTest]
+@="Тест Росич"
+[HKEY_CLASSES_ROOT\RosicTest\shell\open\command]
+@="\"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""
+
+[HKEY_CLASSES_ROOT\RosicStop]
+@="Стоп-файл Росич"
+[HKEY_CLASSES_ROOT\RosicStop\shell\open\command]
+@="\"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""

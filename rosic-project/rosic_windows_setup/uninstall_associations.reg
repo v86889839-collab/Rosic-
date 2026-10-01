@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+; ============================================
+;  Росич — удаление ассоциаций
+;  Двойной клик по этому файлу убирает привязки
+; ============================================
+
+[-HKEY_CLASSES_ROOT\.рос]
+[-HKEY_CLASSES_ROOT\.rus]
+[-HKEY_CLASSES_ROOT\.функц]
+[-HKEY_CLASSES_ROOT\.test]
+[-HKEY_CLASSES_ROOT\.сфайл]
+
+[-HKEY_CLASSES_ROOT\RosicFile]
+[-HKEY_CLASSES_ROOT\RosicModule]
+[-HKEY_CLASSES_ROOT\RosicFunc]
+[-HKEY_CLASSES_ROOT\RosicTest]
+[-HKEY_CLASSES_ROOT\RosicStop]

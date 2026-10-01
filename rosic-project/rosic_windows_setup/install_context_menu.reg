@@ -1,0 +1,37 @@
+Windows Registry Editor Version 5.00
+
+; ============================================
+;  Росич — контекстное меню проводника
+;  Правый клик по папке → "Запустить Росич здесь"
+;  Правый клик по файлу .рос → "Запустить в Росич"
+; ============================================
+;  ВАЖНО: замени C:\Path\To\ на реальный путь!
+; ============================================
+
+; --- Правый клик по папке ---
+[HKEY_CLASSES_ROOT\Directory\shell\RosicRun]
+@="Запустить Росич здесь"
+"Icon"="C:\\Path\\To\\python.exe,0"
+[HKEY_CLASSES_ROOT\Directory\shell\RosicRun\command]
+@="cmd /k cd /d \"%V\" && \"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" main.рос"
+
+; --- Правый клил по фоновому фону папки ---
+[HKEY_CLASSES_ROOT\Directory\Background\shell\RosicRun]
+@="Запустить Росич здесь"
+"Icon"="C:\\Path\\To\\python.exe,0"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\RosicRun\command]
+@="cmd /k \"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" main.рос"
+
+; --- Правый клик по .рос файлу ---
+[HKEY_CLASSES_ROOT\RosicFile\shell\RosicRun]
+@="Запустить в Росич"
+"Icon"="C:\\Path\\To\\python.exe,0"
+[HKEY_CLASSES_ROOT\RosicFile\shell\RosicRun\command]
+@="cmd /k \"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""
+
+; --- Правый клик по .test файлу ---
+[HKEY_CLASSES_ROOT\RosicTest\shell\RosicRun]
+@="Запустить тест Росич"
+"Icon"="C:\\Path\\To\\python.exe,0"
+[HKEY_CLASSES_ROOT\RosicTest\shell\RosicRun\command]
+@="cmd /k \"C:\\Path\\To\\python.exe\" \"C:\\Path\\To\\rosic.py\" \"%1\""
